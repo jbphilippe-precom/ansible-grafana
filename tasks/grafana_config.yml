@@ -1,0 +1,10 @@
+---
+# Configuration Grafana
+
+- name: Put grafana configuration
+  template: src="grafana.ini.j2" dest={{ grafana_conf_path }}/grafana.ini owner=root group=root mode=0644
+
+- name: Update ldap grafana configuration
+  template: src="grafana_ldap.j2" dest={{ grafana_conf_path }}/ldap.toml owner=root group=root mode=0644
+  notify:
+    - Restart grafana

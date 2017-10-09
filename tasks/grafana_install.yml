@@ -1,0 +1,18 @@
+---
+# Grafana installation
+
+- name: Grafana Package Key
+  apt_key: url=http://mirror.services.local/pubkey/ael.scs.systeme.key state=present
+
+- name: Grafana APT repository
+  apt_repository: repo='deb http://mirror.services.local/grafana/ trusty main' state=present
+
+- name: Install latest Grafana
+  apt: name=grafana update_cache=yes state=latest
+  when: grafana_version == "latest"
+
+- name: Install specific version grafana
+  apt: name=grafana={{ grafana_version }} update_cache=yes state=present
+  when: grafana_version != "latest"
+
+- include: grafana_config.yml
