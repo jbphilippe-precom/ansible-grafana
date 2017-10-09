@@ -63,9 +63,9 @@ Role Variables
     grafana_ldap_bind_password: ""
     grafana_ldap_ssl: "true"
     grafana_ldap_ssl_skip_verify: "true"
-    grafana_ldap_bind_dn: 'CN=gitrep.tech.pad.it,OU=GITREP,OU=int,OU=Authentification,DC=micro,DC=pj,DC=fr'
+    grafana_ldap_bind_dn: 'CN=git.tech.pad.it,OU=GIT,OU=int,OU=Authentification,DC=micro,DC=precom,DC=fr'
     grafana_ldap_search_filter: '(sAMAccountName=%s)'
-    grafana_ldap_search_base_dns: 'OU=Utilisateurs,DC=micro,DC=pj,DC=fr'
+    grafana_ldap_search_base_dns: 'OU=Utilisateurs,DC=micro,DC=precom,DC=fr'
 
 Example Playbook
 ----------------
@@ -103,9 +103,5 @@ Exemple of launch
 License
 -------
 
-BSD
-
 Author Information
 ------------------
-
-BSO ISL - sponge
